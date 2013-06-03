@@ -1,0 +1,23 @@
+This is a extentions to support a mailservice workload for ycsb.
+Supported DBs are Cassandra and DynamoDB. Works only with custom DBClients for both DBs, which are available in this repository. Custom mailservice workload files are included in the "workloads" directory.
+
+To use this extension, get the original YCSB from its git repository (https://github.com/brianfrankcooper/YCSB)
+
+To do mailservice workload benchmarks with either Cassandra or DynamoDB:
+- integrate the "core" folder of this extension into the original "YCSB/core" folder
+
+To do Cassandra benchmarks with the mail workload:
+- integrate the contents of the extension cassandra folder into the original "//YCSB/cassandra" folder.
+- delete the classes "CassandraClient8.java" and "CassandraClient7.java" contained in "//YCSB/cassandra/src/main/java/com/yahoo/ycsb/db/"
+
+To do DynamoDB benchmarks with the mail workload:
+- integrate the contents of the extension "dynamodb" folder into the original "//YCSB/dynamodb" folder.
+
+Perform "mvn clean package" to build YCSB with the mailservice workload extension
+
+Alter the workload files in "//YCSB/workloads" to your needs 
+	Check if the right WorkloadExecutor class is selected in the workload file:
+		"workload=com.yahoo.ycsb.workloads.MailAppCassandraWorkload"
+	or
+		"workload=com.yahoo.ycsb.workloads.MailAppDynamoDBWorkload"
+		
