@@ -5,10 +5,10 @@ operationcount=10000
 #workload=com.yahoo.ycsb.workloads.MailAppCassandraWorkload
 workload=com.yahoo.ycsb.workloads.MailAppDynamoDBWorkload
 
-#smtpproportion=0.19
-#popproportion=0.23
-#popemptyproportion=0.57
-#popdeleteproportion=0.01
+smtpproportion=0.19
+popproportion=0.23
+popemptyproportion=0.57
+popdeleteproportion=0.01
 
 dynamodb.awsCredentialsFile=AwsCredentials.properties
 
